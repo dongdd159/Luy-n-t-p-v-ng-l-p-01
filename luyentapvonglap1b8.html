@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button value="Chơi" id="choi" onClick="play()">Chơi</button>
+<script>
+    function play(){
+        let min = parseInt(prompt("Nhập min"))
+        let max = parseInt(prompt("Nhập max"))
+        let choi = document.getElementById("choi")
+        let numbers = Math.floor(Math.random() * (max - min)) + min;
+        let begin = parseInt(prompt("Nhập 1 số"))
+        if (begin<min||begin>max){
+            alert("không có trong khoảng")
+        }else if(begin==numbers){
+            alert("Chúc mừng")
+        }else {
+            if (numbers<begin){
+                alert("bé hơn")
+                choi.innerHTML = "Chơi lại"
+            }else {
+                alert("lớn hơn")
+                choi.innerHTML = "Chơi lại"
+            }
+        }
+    }
+</script>
+</body>
+</html>
